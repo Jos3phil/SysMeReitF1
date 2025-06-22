@@ -17,8 +17,14 @@ echo "=================================="
 
 # Variables de configuración
 PROJECT_DIR="/home/ubuntu/neurokup-system"
-PYTHON_VERSION="3.9"
 SERVICE_USER="neurokup"
+
+# Detectar versión de Ubuntu y Python disponible
+UBUNTU_VERSION=$(lsb_release -rs 2>/dev/null || echo "unknown")
+PYTHON_VERSION=$(python3 --version 2>/dev/null | cut -d' ' -f2 | cut -d'.' -f1,2 || echo "3.12")
+
+echo "🐧 Ubuntu version: $UBUNTU_VERSION"
+echo "🐍 Python version available: $PYTHON_VERSION"
 
 # 1. ACTUALIZAR SISTEMA
 echo "📦 Actualizando sistema..."
@@ -27,22 +33,49 @@ sudo apt-get upgrade -y
 
 # 2. INSTALAR PYTHON Y DEPENDENCIAS DEL SISTEMA
 echo "🐍 Instalando Python y dependencias..."
-sudo apt-get install -y \
-    python3.9 \
-    python3.9-venv \
-    python3.9-dev \
-    python3-pip \
-    git \
-    curl \
-    wget \
-    htop \
-    supervisor \
-    nginx \
-    sqlite3 \
-    build-essential \
-    libssl-dev \
-    libffi-dev \
-    dos2unix
+
+# Para Ubuntu 24.04 (Noble) usamos python3 por defecto
+if [[ "$UBUNTU_VERSION" == "24.04" || "$PYTHON_VERSION" == "3.12" ]]; then
+    echo "📋 Detectado Ubuntu 24.04 - usando Python 3.12"
+    sudo apt-get install -y \
+        python3 \
+        python3-venv \
+        python3-dev \
+        python3-pip \
+        python3-full \
+        git \
+        curl \
+        wget \
+        htop \
+        supervisor \
+        nginx \
+        sqlite3 \
+        build-essential \
+        libssl-dev \
+        libffi-dev \
+        dos2unix \
+        software-properties-common \
+        unzip
+else
+    echo "📋 Detectado Ubuntu anterior - intentando Python 3.9"
+    sudo apt-get install -y \
+        python3.9 \
+        python3.9-venv \
+        python3.9-dev \
+        python3-pip \
+        git \
+        curl \
+        wget \
+        htop \
+        supervisor \
+        nginx \
+        sqlite3 \
+        build-essential \
+        libssl-dev \
+        libffi-dev \
+        dos2unix \
+        software-properties-common
+fi
 
 # 3. CREAR USUARIO DEL SERVICIO
 echo "👤 Creando usuario del servicio..."
@@ -55,25 +88,44 @@ sudo chown $SERVICE_USER:$SERVICE_USER $PROJECT_DIR
 
 # 5. CONFIGURAR ENTORNO VIRTUAL
 echo "🏠 Configurando entorno virtual..."
-sudo -u $SERVICE_USER python3.9 -m venv $PROJECT_DIR/venv
+
+# Determinar comando Python correcto
+if command -v python3.12 >/dev/null 2>&1; then
+    PYTHON_CMD="python3.12"
+elif command -v python3.9 >/dev/null 2>&1; then
+    PYTHON_CMD="python3.9"
+else
+    PYTHON_CMD="python3"
+fi
+
+echo "🐍 Usando comando Python: $PYTHON_CMD"
+
+sudo -u $SERVICE_USER $PYTHON_CMD -m venv $PROJECT_DIR/venv
 sudo -u $SERVICE_USER $PROJECT_DIR/venv/bin/pip install --upgrade pip
 
 # 6. INSTALAR DEPENDENCIAS PYTHON
 echo "📚 Instalando dependencias Python..."
+echo "⏳ Esto puede tomar varios minutos..."
+
+# Actualizar pip y setuptools primero
+sudo -u $SERVICE_USER $PROJECT_DIR/venv/bin/pip install --upgrade pip setuptools wheel
+
+# Instalar dependencias principales (sin versiones específicas para Python 3.12)
 sudo -u $SERVICE_USER $PROJECT_DIR/venv/bin/pip install \
-    pandas==1.5.3 \
-    numpy==1.24.3 \
-    scikit-learn==1.3.0 \
-    matplotlib==3.7.1 \
-    seaborn==0.12.2 \
-    requests==2.31.0 \
-    schedule==1.2.0 \
-    imbalanced-learn==0.11.0 \
-    xgboost==1.7.6 \
-    lightgbm==4.0.0 \
-    kaggle==1.5.16 \
-    psutil==5.9.5 \
-    python-dotenv==1.0.0
+    pandas \
+    numpy \
+    scikit-learn \
+    xgboost \
+    lightgbm \
+    requests \
+    schedule \
+    imbalanced-learn \
+    psutil \
+    python-dotenv
+
+# Instalar dependencias opcionales (que pueden fallar sin romper el sistema)
+echo "📦 Instalando dependencias opcionales..."
+sudo -u $SERVICE_USER $PROJECT_DIR/venv/bin/pip install matplotlib seaborn jupyter kaggle || echo "⚠️ Algunas dependencias opcionales fallaron pero el sistema funcionará"
 
 # 7. CREAR DIRECTORIOS DE TRABAJO
 echo "📂 Creando directorios de trabajo..."

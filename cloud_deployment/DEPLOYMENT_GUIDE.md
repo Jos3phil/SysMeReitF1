@@ -42,12 +42,32 @@ sudo apt update && sudo apt upgrade -y
 
 ## ⚙️ **PASO 2: EJECUTAR SCRIPT DE SETUP**
 
-### **2.1 Descargar y ejecutar setup**
-```bash
-# Descargar el script de setup
-wget https://raw.githubusercontent.com/tu-repo/neurokup/main/cloud_deployment/aws_setup.sh
+### **2.1 Elegir el script apropiado**
 
-# Dar permisos de ejecución
+#### 🎯 **Para Ubuntu 24.04 (Noble Numbat) - RECOMENDADO**
+```bash
+# Script optimizado para Ubuntu 24.04 con Python 3.12
+wget https://raw.githubusercontent.com/Jos3phil/SysMeReitF1/master/cloud_deployment/ubuntu24_setup.sh
+chmod +x ubuntu24_setup.sh
+./ubuntu24_setup.sh
+```
+
+#### 🔄 **Para Ubuntu 22.04/20.04 (Legacy)**
+```bash
+# Script universal que detecta la versión automáticamente
+wget https://raw.githubusercontent.com/Jos3phil/SysMeReitF1/master/cloud_deployment/aws_setup.sh
+chmod +x aws_setup.sh
+./aws_setup.sh
+```
+
+### **2.2 Verificar la versión de Ubuntu**
+```bash
+# Verificar qué versión tienes
+lsb_release -a
+
+# Ubuntu 24.04 → usar ubuntu24_setup.sh
+# Ubuntu 22.04/20.04 → usar aws_setup.sh
+```
 chmod +x aws_setup.sh
 
 # Ejecutar setup (toma 5-10 minutos)
