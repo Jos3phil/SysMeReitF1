@@ -1,0 +1,122 @@
+#!/bin/bash
+
+# ================================
+# 🚀 AWS EC2 SETUP SCRIPT - NEUROKUP II
+# ================================
+# Script para configurar el sistema en AWS EC2 Ubuntu
+
+set -e  # Salir si hay errores
+
+echo "🚀 CONFIGURANDO SISTEMA EN AWS EC2"
+echo "=================================="
+
+# Variables de configuración
+PROJECT_DIR="/home/ubuntu/neurokup-system"
+PYTHON_VERSION="3.9"
+SERVICE_USER="neurokup"
+
+# 1. ACTUALIZAR SISTEMA
+echo "📦 Actualizando sistema..."
+sudo apt-get update -y
+sudo apt-get upgrade -y
+
+# 2. INSTALAR PYTHON Y DEPENDENCIAS DEL SISTEMA
+echo "🐍 Instalando Python y dependencias..."
+sudo apt-get install -y \
+    python3.9 \
+    python3.9-venv \
+    python3.9-dev \
+    python3-pip \
+    git \
+    curl \
+    wget \
+    htop \
+    supervisor \
+    nginx \
+    sqlite3 \
+    build-essential \
+    libssl-dev \
+    libffi-dev
+
+# 3. CREAR USUARIO DEL SERVICIO
+echo "👤 Creando usuario del servicio..."
+sudo useradd -m -s /bin/bash $SERVICE_USER || echo "Usuario ya existe"
+
+# 4. CREAR DIRECTORIO DEL PROYECTO
+echo "📁 Creando estructura de directorios..."
+sudo mkdir -p $PROJECT_DIR
+sudo chown $SERVICE_USER:$SERVICE_USER $PROJECT_DIR
+
+# 5. CONFIGURAR ENTORNO VIRTUAL
+echo "🏠 Configurando entorno virtual..."
+sudo -u $SERVICE_USER python3.9 -m venv $PROJECT_DIR/venv
+sudo -u $SERVICE_USER $PROJECT_DIR/venv/bin/pip install --upgrade pip
+
+# 6. INSTALAR DEPENDENCIAS PYTHON
+echo "📚 Instalando dependencias Python..."
+sudo -u $SERVICE_USER $PROJECT_DIR/venv/bin/pip install \
+    pandas==1.5.3 \
+    numpy==1.24.3 \
+    scikit-learn==1.3.0 \
+    matplotlib==3.7.1 \
+    seaborn==0.12.2 \
+    requests==2.31.0 \
+    schedule==1.2.0 \
+    imbalanced-learn==0.11.0 \
+    xgboost==1.7.6 \
+    lightgbm==4.0.0 \
+    kaggle==1.5.16 \
+    psutil==5.9.5 \
+    python-dotenv==1.0.0
+
+# 7. CREAR DIRECTORIOS DE TRABAJO
+echo "📂 Creando directorios de trabajo..."
+sudo -u $SERVICE_USER mkdir -p $PROJECT_DIR/{logs,data,models,submissions,config,backups}
+
+# 8. CONFIGURAR PERMISOS
+echo "🔐 Configurando permisos..."
+sudo chmod 755 $PROJECT_DIR
+sudo chmod 750 $PROJECT_DIR/{logs,data,models,submissions,config,backups}
+
+# 9. CONFIGURAR LOGROTATE
+echo "📝 Configurando rotación de logs..."
+sudo tee /etc/logrotate.d/neurokup << EOF
+$PROJECT_DIR/logs/*.log {
+    daily
+    rotate 30
+    compress
+    delaycompress
+    missingok
+    notifempty
+    create 0644 $SERVICE_USER $SERVICE_USER
+}
+EOF
+
+# 10. CONFIGURAR SUPERVISOR
+echo "👮 Configurando supervisor..."
+sudo tee /etc/supervisor/conf.d/neurokup.conf << EOF
+[program:neurokup-automation]
+command=$PROJECT_DIR/venv/bin/python $PROJECT_DIR/main.py
+directory=$PROJECT_DIR
+user=$SERVICE_USER
+autostart=true
+autorestart=true
+stderr_logfile=$PROJECT_DIR/logs/supervisor_error.log
+stdout_logfile=$PROJECT_DIR/logs/supervisor_output.log
+environment=PYTHONPATH="$PROJECT_DIR"
+EOF
+
+# 11. CONFIGURAR FIREWALL BÁSICO
+echo "🔥 Configurando firewall..."
+sudo ufw --force enable
+sudo ufw allow ssh
+sudo ufw allow 80
+sudo ufw allow 443
+
+echo "✅ CONFIGURACIÓN COMPLETADA"
+echo "=================================="
+echo "📌 Próximos pasos:"
+echo "1. Copiar código del proyecto a $PROJECT_DIR"
+echo "2. Configurar variables de entorno en $PROJECT_DIR/.env"
+echo "3. Reiniciar supervisor: sudo supervisorctl reread && sudo supervisorctl update"
+echo "4. Verificar estado: sudo supervisorctl status"

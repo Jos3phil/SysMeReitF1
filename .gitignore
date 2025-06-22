@@ -1,0 +1,124 @@
+# ================================
+# 🚫 GITIGNORE - NEUROKUP II PROJECT
+# ================================
+
+# === ARCHIVOS DE DATOS ===
+*.csv
+*.json
+*.db
+*.sqlite
+*.sqlite3
+
+# Excepciones: mantener archivos de ejemplo
+!sample_submission.csv
+!valores_unicos_diccionario.json
+
+# === MODELOS Y RESULTADOS ===
+models/
+models_backup/
+submissions/
+submissions_backup/
+backups/
+resultados/
+*.pkl
+*.joblib
+*.h5
+*.model
+
+# === LOGS Y TEMPORALES ===
+logs/
+*.log
+*.log.*
+temp/
+tmp/
+.cache/
+
+# === JUPYTER NOTEBOOKS (outputs) ===
+*.ipynb_checkpoints/
+.ipynb_checkpoints/
+
+# === CREDENCIALES Y CONFIGURACIÓN SENSIBLE ===
+.env
+*.env
+kaggle.json
+.kaggle/
+credentials.json
+config.json
+api_config.json
+kaggle_credentials.json
+
+# === PYTHON ===
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# === VIRTUAL ENVIRONMENTS ===
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+neurokup_env/
+
+# === IDEs ===
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# === SISTEMA OPERATIVO ===
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# === AWS Y CLOUD ===
+.aws/
+aws-credentials
+*.pem
+*.key
+
+# === BACKUPS ===
+*.backup
+*.bak
+*.tar.gz
+*.zip
+
+# === ARCHIVOS ESPECÍFICOS DEL PROYECTO ===
+# Mantener solo archivos de código, no datos
+train_*.csv
+test_*.csv
+predicciones_*.csv
+solucion*.csv
+submission_*.csv
+split_info.txt
+local_train.ipynb
+
+# === DIRECTORIOS DE TRABAJO ===
+data/
+submissions_db.sqlite

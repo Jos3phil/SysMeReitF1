@@ -1,0 +1,770 @@
+{
+  "Sexo": {
+    "total_registros": 93757,
+    "valores_no_nulos": 93757,
+    "valores_nulos": 0,
+    "porcentaje_nulos": 0.0,
+    "num_valores_unicos": 4,
+    "valores_unicos": [
+      "Mujer",
+      "Varón",
+      "Femenino",
+      "Masculino"
+    ],
+    "conteos_frecuencia": {
+      "Femenino": 25249,
+      "Mujer": 25135,
+      "Masculino": 21773,
+      "Varón": 21600
+    },
+    "valor_mas_frecuente": "Femenino",
+    "frecuencia_max": 25249,
+    "posible_binaria": false
+  },
+  "Salud": {
+    "total_registros": 93757,
+    "valores_no_nulos": 93524,
+    "valores_nulos": 233,
+    "porcentaje_nulos": 0.25,
+    "num_valores_unicos": 4,
+    "valores_unicos": [
+      "Saludable",
+      "Muy saludable",
+      "Poco saludable",
+      "No saludable"
+    ],
+    "conteos_frecuencia": {
+      "Saludable": 46798,
+      "Muy saludable": 31214,
+      "Poco saludable": 8466,
+      "No saludable": 7046,
+      "nan": 233
+    },
+    "valor_mas_frecuente": "Saludable",
+    "frecuencia_max": 46798,
+    "posible_binaria": false
+  },
+  "Salud física": {
+    "total_registros": 93757,
+    "valores_no_nulos": 91815,
+    "valores_nulos": 1942,
+    "porcentaje_nulos": 2.07,
+    "num_valores_unicos": 3,
+    "valores_unicos": [
+      "Normal",
+      "Buena",
+      "Mala"
+    ],
+    "conteos_frecuencia": {
+      "Buena": 61649,
+      "Normal": 19400,
+      "Mala": 10766,
+      "nan": 1942
+    },
+    "valor_mas_frecuente": "Buena",
+    "frecuencia_max": 61649,
+    "posible_binaria": false
+  },
+  "Salud mental": {
+    "total_registros": 93757,
+    "valores_no_nulos": 92162,
+    "valores_nulos": 1595,
+    "porcentaje_nulos": 1.7,
+    "num_valores_unicos": 3,
+    "valores_unicos": [
+      "Mala",
+      "Buena",
+      "Normal"
+    ],
+    "conteos_frecuencia": {
+      "Buena": 58319,
+      "Normal": 22056,
+      "Mala": 11787,
+      "nan": 1595
+    },
+    "valor_mas_frecuente": "Buena",
+    "frecuencia_max": 58319,
+    "posible_binaria": false
+  },
+  "Actividades físicas": {
+    "total_registros": 93757,
+    "valores_no_nulos": 93575,
+    "valores_nulos": 182,
+    "porcentaje_nulos": 0.19,
+    "num_valores_unicos": 8,
+    "valores_unicos": [
+      "no",
+      "SI",
+      "Si",
+      "si",
+      "nO",
+      "sI",
+      "No",
+      "NO"
+    ],
+    "conteos_frecuencia": {
+      "si": 28225,
+      "Si": 17762,
+      "SI": 17760,
+      "no": 8368,
+      "sI": 7080,
+      "No": 5731,
+      "NO": 5731,
+      "nO": 2918,
+      "nan": 182
+    },
+    "valor_mas_frecuente": "si",
+    "frecuencia_max": 28225,
+    "posible_binaria": true,
+    "variaciones_detectadas": [
+      "no",
+      "SI",
+      "Si",
+      "si",
+      "nO",
+      "sI",
+      "No",
+      "NO"
+    ]
+  },
+  "Presión arterial alta": {
+    "total_registros": 93757,
+    "valores_no_nulos": 93399,
+    "valores_nulos": 358,
+    "porcentaje_nulos": 0.38,
+    "num_valores_unicos": 8,
+    "valores_unicos": [
+      "nO",
+      "SI",
+      "NO",
+      "si",
+      "Si",
+      "no",
+      "No",
+      "sI"
+    ],
+    "conteos_frecuencia": {
+      "SI": 22671,
+      "si": 14405,
+      "Si": 13911,
+      "no": 12798,
+      "No": 11031,
+      "NO": 10994,
+      "sI": 5811,
+      "nO": 1778,
+      "nan": 358
+    },
+    "valor_mas_frecuente": "SI",
+    "frecuencia_max": 22671,
+    "posible_binaria": true,
+    "variaciones_detectadas": [
+      "nO",
+      "SI",
+      "NO",
+      "si",
+      "Si",
+      "no",
+      "No",
+      "sI"
+    ]
+  },
+  "Colesterol alto": {
+    "total_registros": 93757,
+    "valores_no_nulos": 80183,
+    "valores_nulos": 13574,
+    "porcentaje_nulos": 14.48,
+    "num_valores_unicos": 8,
+    "valores_unicos": [
+      "SI",
+      "NO",
+      "No",
+      "si",
+      "nO",
+      "no",
+      "sI",
+      "Si"
+    ],
+    "conteos_frecuencia": {
+      "no": 17766,
+      "nan": 13574,
+      "si": 12868,
+      "NO": 12154,
+      "No": 12131,
+      "SI": 7955,
+      "Si": 7918,
+      "nO": 6228,
+      "sI": 3163
+    },
+    "valor_mas_frecuente": "no",
+    "frecuencia_max": 17766,
+    "posible_binaria": true,
+    "variaciones_detectadas": [
+      "SI",
+      "NO",
+      "No",
+      "si",
+      "nO",
+      "no",
+      "sI",
+      "Si"
+    ]
+  },
+  "Cáncer de piel": {
+    "total_registros": 93757,
+    "valores_no_nulos": 93520,
+    "valores_nulos": 237,
+    "porcentaje_nulos": 0.25,
+    "num_valores_unicos": 8,
+    "valores_unicos": [
+      "no",
+      "No",
+      "NO",
+      "sI",
+      "Si",
+      "nO",
+      "si",
+      "SI"
+    ],
+    "conteos_frecuencia": {
+      "no": 31316,
+      "No": 21336,
+      "NO": 21116,
+      "nO": 11064,
+      "si": 3378,
+      "SI": 2234,
+      "Si": 2211,
+      "sI": 865,
+      "nan": 237
+    },
+    "valor_mas_frecuente": "no",
+    "frecuencia_max": 31316,
+    "posible_binaria": true,
+    "variaciones_detectadas": [
+      "no",
+      "No",
+      "NO",
+      "sI",
+      "Si",
+      "nO",
+      "si",
+      "SI"
+    ]
+  },
+  "Cáncer": {
+    "total_registros": 93757,
+    "valores_no_nulos": 93559,
+    "valores_nulos": 198,
+    "porcentaje_nulos": 0.21,
+    "num_valores_unicos": 8,
+    "valores_unicos": [
+      "No",
+      "no",
+      "SI",
+      "NO",
+      "nO",
+      "Si",
+      "sI",
+      "si"
+    ],
+    "conteos_frecuencia": {
+      "no": 29645,
+      "NO": 25372,
+      "No": 25259,
+      "nO": 4161,
+      "SI": 3613,
+      "si": 2316,
+      "Si": 2293,
+      "sI": 900,
+      "nan": 198
+    },
+    "valor_mas_frecuente": "no",
+    "frecuencia_max": 29645,
+    "posible_binaria": true,
+    "variaciones_detectadas": [
+      "No",
+      "no",
+      "SI",
+      "NO",
+      "nO",
+      "Si",
+      "sI",
+      "si"
+    ]
+  },
+  "Bronquitis": {
+    "total_registros": 93757,
+    "valores_no_nulos": 93393,
+    "valores_nulos": 364,
+    "porcentaje_nulos": 0.39,
+    "num_valores_unicos": 8,
+    "valores_unicos": [
+      "No",
+      "si",
+      "no",
+      "nO",
+      "NO",
+      "SI",
+      "sI",
+      "Si"
+    ],
+    "conteos_frecuencia": {
+      "no": 31607,
+      "No": 21719,
+      "NO": 21544,
+      "nO": 11258,
+      "si": 2938,
+      "Si": 1822,
+      "SI": 1800,
+      "sI": 705,
+      "nan": 364
+    },
+    "valor_mas_frecuente": "no",
+    "frecuencia_max": 31607,
+    "posible_binaria": true,
+    "variaciones_detectadas": [
+      "No",
+      "si",
+      "no",
+      "nO",
+      "NO",
+      "SI",
+      "sI",
+      "Si"
+    ]
+  },
+  "Depresión": {
+    "total_registros": 93757,
+    "valores_no_nulos": 93302,
+    "valores_nulos": 455,
+    "porcentaje_nulos": 0.49,
+    "num_valores_unicos": 8,
+    "valores_unicos": [
+      "No",
+      "sI",
+      "NO",
+      "no",
+      "SI",
+      "si",
+      "nO",
+      "Si"
+    ],
+    "conteos_frecuencia": {
+      "no": 26180,
+      "NO": 22552,
+      "No": 22456,
+      "SI": 7393,
+      "si": 4602,
+      "Si": 4602,
+      "nO": 3715,
+      "sI": 1802,
+      "nan": 455
+    },
+    "valor_mas_frecuente": "no",
+    "frecuencia_max": 26180,
+    "posible_binaria": true,
+    "variaciones_detectadas": [
+      "No",
+      "sI",
+      "NO",
+      "no",
+      "SI",
+      "si",
+      "nO",
+      "Si"
+    ]
+  },
+  "Enfermedad renal": {
+    "total_registros": 93757,
+    "valores_no_nulos": 93452,
+    "valores_nulos": 305,
+    "porcentaje_nulos": 0.33,
+    "num_valores_unicos": 8,
+    "valores_unicos": [
+      "NO",
+      "No",
+      "nO",
+      "si",
+      "no",
+      "sI",
+      "Si",
+      "SI"
+    ],
+    "conteos_frecuencia": {
+      "no": 33208,
+      "NO": 22687,
+      "No": 22544,
+      "nO": 11459,
+      "si": 1377,
+      "Si": 909,
+      "SI": 898,
+      "sI": 370,
+      "nan": 305
+    },
+    "valor_mas_frecuente": "no",
+    "frecuencia_max": 33208,
+    "posible_binaria": true,
+    "variaciones_detectadas": [
+      "NO",
+      "No",
+      "nO",
+      "si",
+      "no",
+      "sI",
+      "Si",
+      "SI"
+    ]
+  },
+  "Diabetes": {
+    "total_registros": 93757,
+    "valores_no_nulos": 93640,
+    "valores_nulos": 117,
+    "porcentaje_nulos": 0.12,
+    "num_valores_unicos": 10,
+    "valores_unicos": [
+      "Si",
+      "no",
+      "No",
+      "NO",
+      "si",
+      "nO",
+      "No, solo prediabetes",
+      "sI",
+      "Si, pero solo Se le dijo a la mujer solo durante el embarazo",
+      "SI"
+    ],
+    "conteos_frecuencia": {
+      "no": 31604,
+      "NO": 23398,
+      "No": 19445,
+      "si": 6156,
+      "nO": 3899,
+      "Si": 2507,
+      "SI": 2465,
+      "No, solo prediabetes": 2081,
+      "sI": 1256,
+      "Si, pero solo Se le dijo a la mujer solo durante el embarazo": 829,
+      "nan": 117
+    },
+    "valor_mas_frecuente": "no",
+    "frecuencia_max": 31604,
+    "posible_binaria": true,
+    "variaciones_detectadas": [
+      "Si",
+      "no",
+      "No",
+      "NO",
+      "si",
+      "nO",
+      "sI",
+      "SI"
+    ]
+  },
+  "Artritis": {
+    "total_registros": 93757,
+    "valores_no_nulos": 93204,
+    "valores_nulos": 553,
+    "porcentaje_nulos": 0.59,
+    "num_valores_unicos": 8,
+    "valores_unicos": [
+      "nO",
+      "si",
+      "Si",
+      "no",
+      "SI",
+      "No",
+      "sI",
+      "NO"
+    ],
+    "conteos_frecuencia": {
+      "no": 23380,
+      "NO": 15766,
+      "No": 15660,
+      "si": 12241,
+      "nO": 7965,
+      "Si": 7697,
+      "SI": 7451,
+      "sI": 3044,
+      "nan": 553
+    },
+    "valor_mas_frecuente": "no",
+    "frecuencia_max": 23380,
+    "posible_binaria": true,
+    "variaciones_detectadas": [
+      "nO",
+      "si",
+      "Si",
+      "no",
+      "SI",
+      "No",
+      "sI",
+      "NO"
+    ]
+  },
+  "Dificultad al caminar": {
+    "total_registros": 93757,
+    "valores_no_nulos": 89481,
+    "valores_nulos": 4276,
+    "porcentaje_nulos": 4.56,
+    "num_valores_unicos": 8,
+    "valores_unicos": [
+      "no",
+      "NO",
+      "SI",
+      "No",
+      "nO",
+      "si",
+      "Si",
+      "sI"
+    ],
+    "conteos_frecuencia": {
+      "no": 26196,
+      "NO": 22739,
+      "No": 22419,
+      "SI": 5710,
+      "nan": 4276,
+      "nO": 3748,
+      "si": 3671,
+      "Si": 3547,
+      "sI": 1451
+    },
+    "valor_mas_frecuente": "no",
+    "frecuencia_max": 26196,
+    "posible_binaria": true,
+    "variaciones_detectadas": [
+      "no",
+      "NO",
+      "SI",
+      "No",
+      "nO",
+      "si",
+      "Si",
+      "sI"
+    ]
+  },
+  "Fumar": {
+    "total_registros": 93757,
+    "valores_no_nulos": 88511,
+    "valores_nulos": 5246,
+    "porcentaje_nulos": 5.6,
+    "num_valores_unicos": 8,
+    "valores_unicos": [
+      "SI",
+      "Si",
+      "si",
+      "no",
+      "No",
+      "NO",
+      "nO",
+      "sI"
+    ],
+    "conteos_frecuencia": {
+      "no": 19632,
+      "si": 14329,
+      "NO": 13133,
+      "No": 13123,
+      "SI": 9022,
+      "Si": 8894,
+      "nO": 6842,
+      "nan": 5246,
+      "sI": 3536
+    },
+    "valor_mas_frecuente": "no",
+    "frecuencia_max": 19632,
+    "posible_binaria": true,
+    "variaciones_detectadas": [
+      "SI",
+      "Si",
+      "si",
+      "no",
+      "No",
+      "NO",
+      "nO",
+      "sI"
+    ]
+  },
+  "Productos de tabaco": {
+    "total_registros": 93757,
+    "valores_no_nulos": 88860,
+    "valores_nulos": 4897,
+    "porcentaje_nulos": 5.22,
+    "num_valores_unicos": 3,
+    "valores_unicos": [
+      "Para nada",
+      "Algunos dias",
+      "Todos los dias"
+    ],
+    "conteos_frecuencia": {
+      "Para nada": 85974,
+      "nan": 4897,
+      "Todos los dias": 1716,
+      "Algunos dias": 1170
+    },
+    "valor_mas_frecuente": "Para nada",
+    "frecuencia_max": 85974,
+    "posible_binaria": false
+  },
+  "Bebebidas alcoholicas": {
+    "total_registros": 93757,
+    "valores_no_nulos": 86325,
+    "valores_nulos": 7432,
+    "porcentaje_nulos": 7.93,
+    "num_valores_unicos": 8,
+    "valores_unicos": [
+      "si",
+      "SI",
+      "Si",
+      "sI",
+      "NO",
+      "no",
+      "No",
+      "nO"
+    ],
+    "conteos_frecuencia": {
+      "SI": 32267,
+      "Si": 20512,
+      "si": 20308,
+      "sI": 8091,
+      "nan": 7432,
+      "no": 1776,
+      "NO": 1580,
+      "No": 1532,
+      "nO": 259
+    },
+    "valor_mas_frecuente": "SI",
+    "frecuencia_max": 32267,
+    "posible_binaria": true,
+    "variaciones_detectadas": [
+      "si",
+      "SI",
+      "Si",
+      "sI",
+      "NO",
+      "no",
+      "No",
+      "nO"
+    ]
+  },
+  "VIH": {
+    "total_registros": 93757,
+    "valores_no_nulos": 82805,
+    "valores_nulos": 10952,
+    "porcentaje_nulos": 11.68,
+    "num_valores_unicos": 8,
+    "valores_unicos": [
+      "nO",
+      "No",
+      "no",
+      "NO",
+      "Si",
+      "si",
+      "sI",
+      "SI"
+    ],
+    "conteos_frecuencia": {
+      "no": 20490,
+      "NO": 13793,
+      "No": 13693,
+      "nan": 10952,
+      "si": 10903,
+      "nO": 7171,
+      "SI": 7056,
+      "Si": 6884,
+      "sI": 2815
+    },
+    "valor_mas_frecuente": "no",
+    "frecuencia_max": 20490,
+    "posible_binaria": true,
+    "variaciones_detectadas": [
+      "nO",
+      "No",
+      "no",
+      "NO",
+      "Si",
+      "si",
+      "sI",
+      "SI"
+    ]
+  },
+  "Frutas": {
+    "total_registros": 93757,
+    "valores_no_nulos": 82914,
+    "valores_nulos": 10843,
+    "porcentaje_nulos": 11.57,
+    "num_valores_unicos": 8,
+    "valores_unicos": [
+      "SI",
+      "no",
+      "Si",
+      "si",
+      "No",
+      "NO",
+      "sI",
+      "nO"
+    ],
+    "conteos_frecuencia": {
+      "SI": 20407,
+      "Si": 12826,
+      "si": 12682,
+      "no": 11189,
+      "nan": 10843,
+      "No": 9600,
+      "NO": 9546,
+      "sI": 5112,
+      "nO": 1552
+    },
+    "valor_mas_frecuente": "SI",
+    "frecuencia_max": 20407,
+    "posible_binaria": true,
+    "variaciones_detectadas": [
+      "SI",
+      "no",
+      "Si",
+      "si",
+      "No",
+      "NO",
+      "sI",
+      "nO"
+    ]
+  },
+  "Vegetales": {
+    "total_registros": 93757,
+    "valores_no_nulos": 80932,
+    "valores_nulos": 12825,
+    "porcentaje_nulos": 13.68,
+    "num_valores_unicos": 8,
+    "valores_unicos": [
+      "si",
+      "sI",
+      "Si",
+      "No",
+      "SI",
+      "NO",
+      "no",
+      "nO"
+    ],
+    "conteos_frecuencia": {
+      "si": 26392,
+      "Si": 16441,
+      "SI": 16387,
+      "nan": 12825,
+      "sI": 6570,
+      "no": 5580,
+      "No": 3827,
+      "NO": 3781,
+      "nO": 1954
+    },
+    "valor_mas_frecuente": "si",
+    "frecuencia_max": 26392,
+    "posible_binaria": true,
+    "variaciones_detectadas": [
+      "si",
+      "sI",
+      "Si",
+      "No",
+      "SI",
+      "NO",
+      "no",
+      "nO"
+    ]
+  }
+}

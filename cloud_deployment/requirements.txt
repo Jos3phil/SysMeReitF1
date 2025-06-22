@@ -1,0 +1,163 @@
+# ================================
+# 📦 REQUIREMENTS PARA PRODUCCIÓN
+# ================================
+
+# Core ML libraries
+pandas==1.5.3
+numpy==1.24.3
+scikit-learn==1.3.0
+
+# Visualization
+matplotlib==3.7.1
+seaborn==0.12.2
+
+# Web requests and APIs
+requests==2.31.0
+
+# Scheduling and automation
+schedule==1.2.0
+
+# Advanced ML libraries
+imbalanced-learn==0.11.0
+xgboost==1.7.6
+lightgbm==4.0.0
+
+# Kaggle API
+kaggle==1.5.16
+
+# System monitoring
+psutil==5.9.5
+
+# Environment variables
+python-dotenv==1.0.0
+
+# AWS integration (optional)
+boto3==1.28.25
+botocore==1.31.25
+
+# Database
+sqlite3  # Built-in with Python
+
+# Email notifications (optional)
+# smtplib  # Built-in with Python
+
+# Additional utilities
+pathlib2==2.3.7
+tqdm==4.65.0
+joblib==1.3.1
+
+# Security
+cryptography==41.0.3
+
+# Logging enhancements
+colorlog==6.7.0
+
+# Configuration management
+pyyaml==6.0.1
+configparser  # Built-in with Python
+
+# Date and time utilities
+python-dateutil==2.8.2
+
+# JSON handling
+simplejson==3.19.1
+
+# File compression
+py7zr==0.20.6
+
+# HTTP client with better error handling
+httpx==0.24.1
+
+# Memory profiling (development)
+memory-profiler==0.60.0
+
+# Progress bars
+alive-progress==3.1.4
+
+# Data validation
+cerberus==1.3.4
+
+# Rate limiting
+ratelimit==2.2.1
+
+# Retry logic
+tenacity==8.2.2
+
+# UUID generation
+uuid  # Built-in with Python
+
+# System information
+platform  # Built-in with Python
+
+# Multiprocessing
+multiprocessing  # Built-in with Python
+
+# Threading
+threading  # Built-in with Python
+
+# Signal handling
+signal  # Built-in with Python
+
+# Regular expressions
+re  # Built-in with Python
+
+# JSON manipulation
+json  # Built-in with Python
+
+# Operating system interface
+os  # Built-in with Python
+
+# System-specific parameters and functions
+sys  # Built-in with Python
+
+# Time access and conversions
+time  # Built-in with Python
+
+# Mathematical functions
+math  # Built-in with Python
+
+# Random number generation
+random  # Built-in with Python
+
+# Warning control
+warnings  # Built-in with Python
+
+# Garbage collection
+gc  # Built-in with Python
+
+# Copy operations
+copy  # Built-in with Python
+
+# High-level file operations
+shutil  # Built-in with Python
+
+# Temporary file and directory creation
+tempfile  # Built-in with Python
+
+# File and directory paths
+glob  # Built-in with Python
+
+# Subprocess management
+subprocess  # Built-in with Python
+
+# Data compression and archiving
+tarfile  # Built-in with Python
+zipfile  # Built-in with Python
+
+# CSV file reading and writing
+csv  # Built-in with Python
+
+# Pickle serialization
+pickle  # Built-in with Python
+
+# Base64 encoding
+base64  # Built-in with Python
+
+# URL parsing
+urllib  # Built-in with Python
+
+# Hash algorithms
+hashlib  # Built-in with Python
+
+# Socket interface
+socket  # Built-in with Python
