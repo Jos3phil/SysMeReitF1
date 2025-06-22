@@ -454,14 +454,13 @@ class AutoTrainingSystem:
             
             # Hacer predicciones
             pred_public, f1_public = calcularf1_score.obtenerscore('test_public.csv', modelo)
-            pred_private, _ = calcularf1_score.obtenerscore('test_private.csv', modelo)
-              # Crear submission
+            pred_private, _ = calcularf1_score.obtenerscore('test_private.csv', modelo)            # Crear submission
             submission = calcularf1_score.crear_submission_final(
                 pred_public, pred_private, 
-                filename=f"{Config.SUBMISSIONS_DIR}/solucion_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv"
+                filename="solucion.csv"
             )
             
-            archivo_submission = f"{Config.SUBMISSIONS_DIR}/solucion_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv"
+            archivo_submission = "solucion.csv"
             submission.to_csv(archivo_submission, index=False)
             
             return archivo_submission, f1_public

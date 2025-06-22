@@ -592,15 +592,13 @@ def procesar_ambos_datasets(modelo=None):
     else:
         print("⚠️ test_private.csv no encontrado")
       # Crear submission combinada si ambos existen
-    if 'public' in resultados and 'private' in resultados:
-        print("\n📝 CREANDO SUBMISSION COMBINADA:")
+    if 'public' in resultados and 'private' in resultados:        print("\n📝 CREANDO SUBMISSION COMBINADA:")
         submission_combinada = pd.concat([
             resultados['public']['predicciones'][['ID', 'Condición']],
             resultados['private']['predicciones'][['ID', 'Condición']]
         ], ignore_index=True)
         
-        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-        archivo_final = f'solucion_{timestamp}.csv'
+        archivo_final = 'solucion.csv'
         submission_combinada.to_csv(archivo_final, index=False)
         print(f"💾 Submission final: {archivo_final}")
         
@@ -705,7 +703,7 @@ if __name__ == "__main__":
     print("f1_public = cf1.obtener_score_simple('test_public.csv')")
     print()
     print("# 3. GENERAR ARCHIVOS DE SUBMISSION")
-    print("cf1.generar_predicciones('test_private.csv', 'mi_submission.csv')")
+    print("cf1.generar_predicciones('test_private.csv', 'solucion.csv')")
     print()
     print("# 4. PROCESAR TODO AUTOMÁTICAMENTE")
     print("resultados = cf1.procesar_ambos_datasets()")

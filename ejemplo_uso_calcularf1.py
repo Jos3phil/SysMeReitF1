@@ -40,10 +40,9 @@ def main():
         # Para test_private.csv (sin columna 'Condición')
         predicciones_private, _ = cf1.obtener_score('test_private.csv', tiene_target=False)
         print(f"✅ Predicciones test_private: {len(predicciones_private):,}")
-        
-        # Generar archivo de submission
-        submission = cf1.generar_predicciones('test_private.csv', 'submission_private_ejemplo.csv')
-        print(f"📝 Archivo de submission creado: submission_private_ejemplo.csv")
+          # Generar archivo de submission
+        submission = cf1.generar_predicciones('test_private.csv', 'solucion.csv')
+        print(f"📝 Archivo de submission creado: solucion.csv")
         
     except Exception as e:
         print(f"❌ Error con test_private: {e}")
