@@ -9,9 +9,14 @@
 *.sqlite
 *.sqlite3
 
-# Excepciones: mantener archivos de ejemplo
+# Excepciones: mantener archivos esenciales
 !sample_submission.csv
 !valores_unicos_diccionario.json
+!train.csv
+!test_public.csv
+!test_private.csv
+!train_local.csv
+!train_colab.csv
 
 # === MODELOS Y RESULTADOS ===
 models/

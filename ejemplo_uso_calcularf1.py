@@ -10,7 +10,7 @@ Este script muestra cómo usar todas las funcionalidades del módulo para:
 5. Crear archivos de submission
 """
 
-import calcularf1_score as cf1
+import automatizacion.calcularf1_score as cf1
 import pandas as pd
 
 def main():

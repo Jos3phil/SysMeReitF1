@@ -9,7 +9,7 @@ Este script implementa exactamente lo que describiste:
 4. Generar submission final
 """
 
-import calcularf1_score as cf1
+import automatizacion.calcularf1_score as cf1
 import pandas as pd
 import os
 from datetime import datetime
