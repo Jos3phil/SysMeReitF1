@@ -7,6 +7,11 @@
 
 set -e  # Salir si hay errores
 
+# Corregir terminaciones de línea si es necesario
+if command -v dos2unix >/dev/null 2>&1; then
+    dos2unix "$0" 2>/dev/null || true
+fi
+
 echo "🚀 CONFIGURANDO SISTEMA EN AWS EC2"
 echo "=================================="
 
@@ -36,7 +41,8 @@ sudo apt-get install -y \
     sqlite3 \
     build-essential \
     libssl-dev \
-    libffi-dev
+    libffi-dev \
+    dos2unix
 
 # 3. CREAR USUARIO DEL SERVICIO
 echo "👤 Creando usuario del servicio..."
