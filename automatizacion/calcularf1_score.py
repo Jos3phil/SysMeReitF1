@@ -392,7 +392,7 @@ def obtenerscore(df_test, modelo_entrenado=None):
     
     return predicciones, f1_score
 
-def crear_submission_final(predicciones_public, predicciones_private, filename='submission_final.csv'):
+def crear_submission_final(predicciones_public, predicciones_private, filename='solucion.csv'):
     """
     Crear archivo de submission final combinando ambos datasets
     
@@ -591,8 +591,7 @@ def procesar_ambos_datasets(modelo=None):
         generar_predicciones('test_private.csv', 'predicciones_private.csv', modelo)
     else:
         print("⚠️ test_private.csv no encontrado")
-    
-    # Crear submission combinada si ambos existen
+      # Crear submission combinada si ambos existen
     if 'public' in resultados and 'private' in resultados:
         print("\n📝 CREANDO SUBMISSION COMBINADA:")
         submission_combinada = pd.concat([
@@ -601,7 +600,7 @@ def procesar_ambos_datasets(modelo=None):
         ], ignore_index=True)
         
         timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-        archivo_final = f'submission_final_{timestamp}.csv'
+        archivo_final = f'solucion_{timestamp}.csv'
         submission_combinada.to_csv(archivo_final, index=False)
         print(f"💾 Submission final: {archivo_final}")
         

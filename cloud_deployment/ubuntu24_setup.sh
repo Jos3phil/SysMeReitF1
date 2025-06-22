@@ -63,7 +63,7 @@ sudo chown ubuntu:ubuntu $PROJECT_DIR
 echo "📥 Clonando repositorio..."
 cd $PROJECT_DIR
 if [ ! -d ".git" ]; then
-    git clone https://github.com/tu-usuario/neurokup-ii-system.git .
+    git clone https://github.com/Jos3phil/SysMeReitF1.git
 else
     git pull origin main
 fi
